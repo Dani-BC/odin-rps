@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(82, 168, 168);
+}
+
+.headerText {
+    text-align: center;
+    padding-block: 15px;
+    margin: 0;
+}
+
+.imageDisplay {
+    margin-inline: 10%;
+    margin-block: 30px;
+    background-color: #dbdada;
+}
+
+.imageDisplayBox {
+    margin-block: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+}
+
+.imageDisplayBox img {
+    width: 30%;
+    height: 30%;
+    background-color: #dbdada;
+    object-fit: fill;
+    aspect-ratio: 1/1;
+}
+
+.buttonDisplay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.scoreDisplay {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+}
+
+.scoreDisplayText {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.buttonDisplay button {
+    margin: 20px;
+    width: 90px;
+    border: none;
+    background-color: rgb(113, 218, 218);
+    height: 30px;
+    border-radius: 10px;
+
+}
+
+.buttonDisplay button:hover {
+    background-color: rgb(82, 168, 168);
+    border: 2px solid rgb(0, 0, 0);
+    cursor: pointer;
+}

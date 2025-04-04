@@ -5,10 +5,40 @@
     <meta charset="UTF-8">
     <title>Janken</title>
     <script src="jscript.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+<header><h1 class="headerText">Rock Paper Scissors</h1></header>
 
+<div class="imageDisplay" >
+    <div class="imageDisplayBox">
+    <img id="playerChoice" src="img/paper.png" alt="Player Choice" class="imageDisplay">
+    <img id="computerChoice" src="img/rock.png" alt="Computer Choice" class="imageDisplay">
+    </div>
+</div>
+
+<div class="buttonDisplay">
+
+    <button>Rock</button>
+    <button>Paper</button>
+    <button>Scissors</button>
+
+</div>
+
+<div class="scoreDisplay">
+    <div class="scoreDisplayBox">
+        <h2>Score</h2>
+        <div class="scoreDisplayText">
+            <p id="playerScore">Player: 0</p>
+            <p id="computerScore">Computer: 0</p>
+            <p id="rounds">Rounds: 0</p>
+        </div>
+    </div>
+
+
+
+</div>
 </body>
 
 </html>
