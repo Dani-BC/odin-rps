@@ -1,3 +1,7 @@
+let rounds = 0;
+let playerScore = 0;
+let botScore = 0;
+
 function randondNumber(max) {
   return Math.floor(Math.random() * max);
 }
@@ -5,71 +9,58 @@ function randondNumber(max) {
 function botOption() {
   let botOption = randondNumber(3);
   if (botOption == 0) {
+    document.getElementById("computerChoice").src = "img/rock.png";
     return "rock";
   } else if (botOption == 1) {
+    document.getElementById("computerChoice").src = "img/paper.png";
     return "paper";
   } else {
+    document.getElementById("computerChoice").src = "img/scissor.png";
     return "scissors";
   }
 }
 
-function playerOption() {
-  let playerOption = prompt("Enter your option: 1-rock, 2-paper, 3-scissors");
-  if (playerOption == 1) {
-    playerOption = "rock";
-    return playerOption;
-  } else if (playerOption == 2) {
-    playerOption = "paper";
-    return playerOption;
-  } else if (playerOption == 3) {
-    playerOption = "scissors";
-    return playerOption;
+function playRound(playerOption) {
+
+  if(playerOption == "rock"){
+    document.getElementById("playerChoice").src = "img/rock.png";
   }
-  console.log("Player option: " + playerOption);
-}
-
-function game() {
-  let rounds = 5;
-  let playerScore = 0;
-  let botScore = 0;
-
-  do {
-    let playeropt = playerOption();
-    let botopt = botOption();
-    console.log("Player option: " + playeropt);
-    console.log("Bot option: " + botopt);
-
-    if (playeropt == "rock" && botopt == "scissors") {
-      console.log("Player wins!");
-      playerScore++;
-    } else if (playeropt == "rock" && botopt == "paper") {
-      console.log("Bot wins!");
-      botScore++;
-    } else if (playeropt == "paper" && botopt == "rock") {
-      console.log("Player wins!");
-      playerScore++;
-    } else if (playeropt == "paper" && botopt == "scissors") {
-      console.log("Bot wins!");
-      botScore++;
-    } else if (playeropt == "scissors" && botopt == "paper") {
-      console.log("Player wins!");
-      playerScore++;
-    } else if (playeropt == "scissors" && botopt == "rock") {
-      console.log("Bot wins!");
-      botScore++;
-    } else {
-      console.log("Draw!");
+    else if(playerOption == "paper"){
+    document.getElementById("playerChoice").src = "img/paper.png";
+    }
+    else{
+      document.getElementById("playerChoice").src = "img/scissor.png";
     }
 
-    rounds--;
-  } while (rounds > 0);
+  let botopt = botOption();
 
-  if (playerScore > botScore) {
-    console.log("Player wins the game!");
-  } else if (botScore > playerScore) {
-    console.log("Bot wins the game!");
+  console.log("Player option: " + playerOption);
+  console.log("Bot option: " + botopt);
+
+  if (playerOption == "rock" && botopt == "scissors") {
+    console.log("Player wins!");
+    playerScore++;
+  } else if (playerOption == "rock" && botopt == "paper") {
+    console.log("Bot wins!");
+    botScore++;
+  } else if (playerOption == "paper" && botopt == "rock") {
+    console.log("Player wins!");
+    playerScore;
+  } else if (playerOption == "paper" && botopt == "scissors") {
+    console.log("Bot wins!");
+    botScore++;
+  } else if (playerOption == "scissors" && botopt == "paper") {
+    console.log("Player wins!");
+    playerScore++;
+  } else if (playerOption == "scissors" && botopt == "rock") {
+    console.log("Bot wins!");
+    botScore++;
   } else {
-    console.log("It's a draw!");
+    console.log("Draw!");
   }
+  rounds++;
+  document.getElementById("rounds").innerHTML = "Rounds: " + rounds;
+  document.getElementById("playerScore").innerHTML =
+    "Player Score: " + playerScore;
+  document.getElementById("computerScore").innerHTML = "Bot Score: " + botScore;
 }
-
